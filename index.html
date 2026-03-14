@@ -14,7 +14,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f5f5f5;
+            background-color: #f5f5f7;
         }
         .container {
             max-width: 800px;
@@ -26,82 +26,96 @@
             margin-bottom: 40px;
         }
         .header h1 {
-            font-size: 32px;
-            color: #007AFF;
+            font-size: 2.5rem;
+            color: #1d1d1f;
             margin-bottom: 10px;
         }
-        .header p {
-            color: #666;
-            font-size: 16px;
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #86868b;
         }
         .card {
-            background: white;
-            border-radius: 12px;
+            background: #fff;
+            border-radius: 18px;
             padding: 30px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
         .card h2 {
-            font-size: 20px;
-            color: #333;
+            font-size: 1.5rem;
+            color: #1d1d1f;
             margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #007AFF;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: #007aff;
+            border-radius: 2px;
         }
         .card p {
-            margin-bottom: 10px;
             color: #555;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
             margin-bottom: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
         }
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: #007AFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: white;
-            font-size: 18px;
+        .card ul {
+            list-style: none;
+            padding-left: 0;
         }
-        .contact-info h3 {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 5px;
+        .card ul li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+        .card ul li::before {
+            content: '•';
+            color: #007aff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .contact-info {
+            background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+            color: #fff;
+            text-align: center;
+        }
+        .contact-info h2::before {
+            background: #fff;
+        }
+        .contact-info p, .contact-info a {
+            color: rgba(255, 255, 255, 0.9);
         }
         .contact-info a {
-            color: #007AFF;
-            text-decoration: none;
-            font-size: 14px;
+            color: #fff;
+            text-decoration: underline;
+            font-weight: 600;
         }
         .contact-info a:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
-        .faq-item {
-            margin-bottom: 20px;
+        .email-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 24px;
+            border-radius: 25px;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: background 0.3s ease;
         }
-        .faq-item h3 {
-            font-size: 16px;
-            color: #007AFF;
-            margin-bottom: 8px;
-        }
-        .faq-item p {
-            color: #666;
-            font-size: 14px;
+        .email-link:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
         .footer {
             text-align: center;
             margin-top: 40px;
-            color: #999;
-            font-size: 14px;
+            color: #86868b;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -109,55 +123,34 @@
     <div class="container">
         <div class="header">
             <h1>CareBike</h1>
-            <p>技术支持中心</p>
+            <p class="subtitle">技术支持</p>
         </div>
 
         <div class="card">
-            <h2>联系我们</h2>
-            <p>如果您在使用 CareBike 应用过程中遇到任何问题，或有任何建议，请通过以下方式联系我们：</p>
-            
-            <div class="contact-item">
-                <div class="contact-icon">✉</div>
-                <div class="contact-info">
-                    <h3>电子邮箱</h3>
-                    <a href="mailto:iocompile67692@gmail.com">iocompile67692@gmail.com</a>
-                </div>
-            </div>
+            <h2>关于 CareBike</h2>
+            <p>CareBike 是一款专为骑行爱好者打造的应用程序，帮助您记录骑行数据、规划路线、追踪健康指标，让每一次骑行都更有价值。</p>
         </div>
 
         <div class="card">
             <h2>常见问题</h2>
-            
-            <div class="faq-item">
-                <h3>应用无法正常运行怎么办？</h3>
-                <p>请尝试以下步骤：1) 重启应用；2) 检查网络连接；3) 更新到最新版本；4) 重新安装应用。如果问题仍然存在，请发送邮件联系我们。</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>如何更新应用到最新版本？</h3>
-                <p>请前往 App Store，搜索 "CareBike"，点击"更新"按钮即可获取最新版本。</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>遇到闪退问题如何处理？</h3>
-                <p>请尝试：1) 清理手机存储空间；2) 关闭后台其他应用；3) 重启设备；4) 卸载后重新安装应用。如问题持续，请发送邮件描述具体情况。</p>
-            </div>
+            <ul>
+                <li>如何开始记录骑行？</li>
+                <li>如何同步我的骑行数据？</li>
+                <li>如何导出骑行记录？</li>
+                <li>应用支持哪些设备？</li>
+            </ul>
+            <p>如有任何问题，请通过下方联系方式与我们取得联系，我们将尽快为您解答。</p>
         </div>
 
-        <div class="card">
-            <h2>反馈问题</h2>
-            <p>当您向我们反馈问题时，请尽量提供以下信息，以便我们更快地帮助您解决问题：</p>
-            <ul style="margin-left: 20px; color: #555; line-height: 2;">
-                <li>设备型号（如 iPhone 15 Pro）</li>
-                <li>iOS 系统版本</li>
-                <li>应用版本号</li>
-                <li>问题描述及重现步骤</li>
-                <li>相关截图（如有）</li>
-            </ul>
+        <div class="card contact-info">
+            <h2>联系我们</h2>
+            <p>如果您在使用过程中遇到任何问题，或有任何建议和反馈，欢迎通过以下方式联系我们：</p>
+            <a href="mailto:iocompile67692@gmail.com" class="email-link">iocompile67692@gmail.com</a>
+            <p style="margin-top: 20px; font-size: 0.9rem;">我们将在 1-3 个工作日内回复您的邮件。</p>
         </div>
 
         <div class="footer">
-            <p>© 2025 CareBike. All rights reserved.</p>
+            <p>&copy; 2025 CareBike. All rights reserved.</p>
         </div>
     </div>
 </body>
